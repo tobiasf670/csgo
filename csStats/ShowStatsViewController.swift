@@ -15,6 +15,9 @@ class ShowStatsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     
+        func getData(){
+            
+        }
 
     /*
     // MARK: - Navigation
