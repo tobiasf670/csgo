@@ -16,7 +16,7 @@ class ShowStatsViewController: UIViewController {
         // Do any additional setup after loading the view.
     
         func getData(){
-            
+            //find stream cs go api and get data from API
         }
 
     /*
