@@ -16,7 +16,15 @@ class ShowStatsViewController: UIViewController {
         // Do any additional setup after loading the view.
     
         func getData(){
-            //find stream cs go api and get data from API
+            //API LINK: https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=12A1D1DE83F9932934EDD6DF2BA00463&steamid=76561197998840550
+            // API LINK WITH USERNAME AND STREAMID : http://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?key=[APIKEY]&appid=730&steamid=[steamid]
+            // Make model
+            // Make parse
+            // make a graph
+            // input username
+            // API link to pro mathces
+            // GRAPH LIB: https://github.com/danielgindi/Charts
+           
         }
 
     /*
