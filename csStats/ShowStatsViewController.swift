@@ -5,13 +5,25 @@
 //  Created by Tobias Frantsen on 28/09/2018.
 //  Copyright © 2018 Tobias Frantsen. All rights reserved.
 //
-
+import Alamofire
 import UIKit
 
 class ShowStatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Alamofire.request("https://httpbin.org/get")
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                case .failure(let error):
+                    print(error)
+                }
+        }
 
         // Do any additional setup after loading the view.
     

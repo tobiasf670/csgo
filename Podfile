@@ -10,4 +10,6 @@ target 'csStats' do
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'Charts'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'SimpleCheckbox'
 end
