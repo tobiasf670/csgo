@@ -12,4 +12,5 @@ target 'csStats' do
     pod 'Charts'
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SimpleCheckbox'
+    pod 'Nuke'
 end

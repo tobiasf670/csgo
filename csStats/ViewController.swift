@@ -35,13 +35,13 @@ class ViewController: UIViewController {
     
     
     func showTotalKills() {
-        guard let statsArray = self.stats else {
-            return
-        }
-        for stats in statsArray {
-            if stats.name == StatsType.total_kills.rawValue {
-                self.label.text = String(stats.value!)
-            }
+        
+        if let foo = self.stats?.first(where: {$0.name == StatsType.total_kills.rawValue }) {
+            // do something with foo
+            self.label.text = String(foo.value!)
+        } else {
+            // item could not be found
+            self.label.text = "NO VALUE"
         }
     }
 

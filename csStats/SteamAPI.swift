@@ -42,6 +42,43 @@ class SteamAPI {
     }
     }
     
+    
+    public func getMatchs() -> Observable<[MatchModel]> {
+        return Observable.create { observer -> Disposable in
+            
+            Alamofire.request("http://localhost:3000/results")
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success:
+                        
+                        let json = JSON(response.data!)
+                     
+//                        let array = SteamModel.parse(json: json)
+                        let array = MatchModel.parse(json: json)
+                        
+                        observer.onNext(array)
+                        
+                        //parse and return object
+//                        observer.onNext(array)
+                    case .failure(let error):
+                        if (response.response?.statusCode) != nil
+                        {
+                            observer.onError(error)
+                        }
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create()
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
 //
 //    func getFriends() -> Observable<[Friend]> {
 //        return Observable.create { observer -> Disposable in

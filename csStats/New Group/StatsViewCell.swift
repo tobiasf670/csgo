@@ -10,9 +10,18 @@ import UIKit
 
 class StatsViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func setupCell(imageName: UIImage?, name: String, value: String) {
+        self.imageView.image = imageName
+        self.nameLabel.text = name
+        self.valueLabel.text = value
     }
 
 }

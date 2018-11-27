@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum StatsType : String {
+enum StatsType : String, CaseIterable {
     
     case total_kills
     case total_deaths

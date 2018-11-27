@@ -20,11 +20,10 @@ class SteamModel {
         let statsArray = json["playerstats"]["stats"]
         
         
-        var dictionary = [String: Int]()
         var testArray : [SteamModel] = [SteamModel]()
         for stats in statsArray {
             if let name = stats.1["name"].string, let value = stats.1["value"].int {
-                var newObject = SteamModel(name: name, value: value)
+                let newObject = SteamModel(name: name, value: value)
                 testArray.append(newObject)
             }
         }

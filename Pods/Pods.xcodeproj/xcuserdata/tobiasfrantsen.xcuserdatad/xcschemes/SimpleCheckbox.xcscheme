@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8653D313D2DE6C42F94ACE71E0C5329"
+               BlueprintIdentifier = "C3498D7632BB0B9CC7F0C25A46B54915"
                BlueprintName = "SimpleCheckbox"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SimpleCheckbox.framework">
