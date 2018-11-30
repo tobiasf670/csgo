@@ -57,8 +57,11 @@
                             <constraint firstAttribute="height" constant="3" id="4C0-NP-gSU"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic5-wp-7Le">
-                        <rect key="frame" x="11.5" y="60" width="43.5" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:002222222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic5-wp-7Le">
+                        <rect key="frame" x="5" y="60" width="120" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="Mu9-Fa-dch"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -75,7 +78,6 @@
                 <constraint firstItem="CME-MN-vex" firstAttribute="top" secondItem="ic5-wp-7Le" secondAttribute="bottom" constant="4.5" id="IKW-hH-im2"/>
                 <constraint firstAttribute="bottom" secondItem="l6n-Nj-5t7" secondAttribute="bottom" id="In1-XK-oSy"/>
                 <constraint firstItem="CME-MN-vex" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="MB3-ya-ukK"/>
-                <constraint firstItem="ic5-wp-7Le" firstAttribute="centerX" secondItem="gPn-cn-bRN" secondAttribute="centerX" id="NcZ-Go-EXt"/>
                 <constraint firstItem="l6n-Nj-5t7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tda-3A-VCo"/>
                 <constraint firstItem="xxQ-xh-8U9" firstAttribute="leading" secondItem="gPn-cn-bRN" secondAttribute="trailing" constant="5" id="Vgf-dB-FYG"/>
                 <constraint firstItem="VXk-72-B7T" firstAttribute="leading" secondItem="gPn-cn-bRN" secondAttribute="trailing" constant="5" id="WQA-OX-UuG"/>
@@ -84,6 +86,7 @@
                 <constraint firstAttribute="trailing" secondItem="l6n-Nj-5t7" secondAttribute="trailing" id="qrw-sf-3Wa"/>
                 <constraint firstItem="gPn-cn-bRN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="wed-Qw-K08"/>
                 <constraint firstAttribute="trailing" secondItem="l6n-Nj-5t7" secondAttribute="trailing" id="xZh-sT-nJO"/>
+                <constraint firstItem="ic5-wp-7Le" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="xiS-gp-8fR"/>
                 <constraint firstItem="ic5-wp-7Le" firstAttribute="top" secondItem="gPn-cn-bRN" secondAttribute="bottom" constant="5" id="xwM-f7-hKa"/>
                 <constraint firstItem="l6n-Nj-5t7" firstAttribute="top" secondItem="CME-MN-vex" secondAttribute="bottom" constant="2" id="z71-OZ-nPg"/>
             </constraints>

@@ -100,7 +100,7 @@ class ShowStatsCollectionViewController: UICollectionViewController, UICollectio
               if indexPath.row == 0 {
             return CGSize(width: (view.frame.width) - 10, height: 200)
         }
-        
-        return CGSize(width: (view.frame.width/3) - 10, height: 200)
+        debugPrint(CGSize(width: (view.frame.width/3) - 10, height: 150))
+        return CGSize(width: (view.frame.width/3) - 10, height: 150)
     }
 }
