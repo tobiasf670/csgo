@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BcY-9z-Yvh" customClass="SectionHeadeView" customModule="csStats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5v-8i-kAP">
+                    <rect key="frame" x="75" y="15" width="300" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wih-Ha-d3B">
+                    <rect key="frame" x="5" y="5" width="50" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="FHJ-SH-mBU"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Wih-Ha-d3B" firstAttribute="leading" secondItem="BcY-9z-Yvh" secondAttribute="leading" constant="5" id="0Re-bR-YD1"/>
+                <constraint firstAttribute="bottom" secondItem="Wih-Ha-d3B" secondAttribute="bottom" constant="5" id="Ph2-3v-2Fx"/>
+                <constraint firstItem="I5v-8i-kAP" firstAttribute="top" secondItem="dMk-TV-N62" secondAttribute="top" constant="15" id="U5n-yH-bxK"/>
+                <constraint firstItem="I5v-8i-kAP" firstAttribute="leading" secondItem="Wih-Ha-d3B" secondAttribute="trailing" constant="20" id="cbP-zs-pkF"/>
+                <constraint firstItem="dMk-TV-N62" firstAttribute="bottom" secondItem="I5v-8i-kAP" secondAttribute="bottom" constant="14" id="hUn-6S-0PL"/>
+                <constraint firstItem="Wih-Ha-d3B" firstAttribute="top" secondItem="BcY-9z-Yvh" secondAttribute="top" constant="5" id="nTy-hI-kha"/>
+                <constraint firstItem="dMk-TV-N62" firstAttribute="trailing" secondItem="I5v-8i-kAP" secondAttribute="trailing" id="vAz-yA-u3k"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="dMk-TV-N62"/>
+            <connections>
+                <outlet property="logoImageView" destination="Wih-Ha-d3B" id="Atl-hT-oP0"/>
+                <outlet property="teamNameLabel" destination="I5v-8i-kAP" id="O2C-Az-bMD"/>
+            </connections>
+            <point key="canvasLocation" x="-54" y="125"/>
+        </collectionReusableView>
+    </objects>
+</document>

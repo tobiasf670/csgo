@@ -74,6 +74,33 @@ class SteamAPI {
         }
     }
     
+    public func getProPlayers(withTeamID: String) -> Observable<TeamModel> {
+        return Observable.create { observer -> Disposable in
+        
+            Alamofire.request("http://localhost:3000/team/\(withTeamID)")
+                .validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .success:
+                        
+                        let json = JSON(response.data!)
+                     
+                        let team = TeamModel.parse(json: json)
+                        observer.onNext(team)
+                      
+                    case .failure(let error):
+                        if (response.response?.statusCode) != nil
+                        {
+                            observer.onError(error)
+                        }
+                        observer.onError(error)
+                    }
+            }
+            return Disposables.create()
+            
+        }
+    }
+    
     
     
     
