@@ -22,7 +22,7 @@ class BarChartViewCell: UICollectionViewCell {
     }
 
     
-    func setup(stats: [SteamModel]?) {
+    func setup(stats: [StastModel]?) {
         guard let statsArray = stats else {
             return
         }
@@ -30,27 +30,27 @@ class BarChartViewCell: UICollectionViewCell {
          
             switch stats.name! {
             case StatsType.total_kills_knife.rawValue:
-                if let yValue = stats.value {
+                if let yValue = stats.value.value {
                     self.addBarChartDataToArray(yValue: Double(yValue), name: "Knife KILLS")
                 }
             case StatsType.total_kills_glock.rawValue:
-                if let yValue = stats.value {
+                if let yValue = stats.value.value {
                     self.addBarChartDataToArray(yValue: Double(yValue), name: "Glock KILLS")
                 }
             case StatsType.total_kills_deagle.rawValue:
-                if let yValue = stats.value {
+                if let yValue = stats.value.value {
                     self.addBarChartDataToArray(yValue: Double(yValue), name: "Deagle KILLS")
                 }
             case StatsType.total_kills_ak47.rawValue:
-                if let yValue = stats.value {
+                if let yValue = stats.value.value {
                     self.addBarChartDataToArray(yValue: Double(yValue), name: "AK47 KILLS")
                 }
             case StatsType.total_kills_awp.rawValue:
-                if let yValue = stats.value {
+                if let yValue = stats.value.value {
                     self.addBarChartDataToArray(yValue: Double(yValue), name: "AWP KILLS")
                 }
             case StatsType.total_kills_aug.rawValue:
-                if let yValue = stats.value {
+                if let yValue = stats.value.value {
                     self.addBarChartDataToArray(yValue: Double(yValue), name: "AUG KILLS")
                 }
                 

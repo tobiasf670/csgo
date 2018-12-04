@@ -40,17 +40,7 @@ class MatchViewCell: UICollectionViewCell {
     }
     
     func setup(time: String, teamOneImage : String, teamTwoImage: String, teamOneName: String, teamTwoName: String, BO: String ) {
-//
-//        if let timeNumber = Double(time) {
-//
-//            let _time = timeNumber / 1000
-//            let date = Date(timeIntervalSince1970: _time)
-//            let formatter = DateFormatter()
-//
-//            formatter.dateFormat = "MM-dd HH:mm"
-//            let stringDate = formatter.string(from: date)
-//            self.timeLabel.text = stringDate
-//        }
+
         self.setupTime(time: time)
         
         self.teamOneNameLabel.text = teamOneName
@@ -87,6 +77,11 @@ class MatchViewCell: UICollectionViewCell {
                 formatter.dateFormat = "MM-dd HH:mm"
                 let stringDate = formatter.string(from: date)
                 self.timeLabel.text = stringDate
+                
+                
+                formatter.locale =  Locale(identifier: Locale.current.languageCode ?? "en_US")
+                let Newdate = formatter.date(from: time)
+                debugPrint(Newdate)
             }
         }
       

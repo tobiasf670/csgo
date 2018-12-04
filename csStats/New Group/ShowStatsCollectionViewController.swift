@@ -21,8 +21,8 @@ class ShowStatsCollectionViewController: UICollectionViewController, UICollectio
     var statsArray = StatsType.allCases
     
     let disposeBag = DisposeBag()
-    var stats: [SteamModel]?
-    var cellRow: [cellType]?
+    var stats: [StastModel]?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,10 +72,7 @@ class ShowStatsCollectionViewController: UICollectionViewController, UICollectio
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StatsViewCell", for: indexPath) as? StatsViewCell else {
-//            return UICollectionViewCell()
-//        }
-        
+
         if indexPath.row == 0 {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BarChartViewCell", for: indexPath) as? BarChartViewCell {
                 cell.setup(stats: self.stats)
@@ -86,7 +83,7 @@ class ShowStatsCollectionViewController: UICollectionViewController, UICollectio
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StatsViewCell", for: indexPath) as? StatsViewCell {
             let type = self.statsArray[indexPath.row]
             if let element = self.stats?.first(where: {$0.name == type.rawValue}) {
-                cell.setupCell(imageName: nil, name: element.name!, value: String(element.value!))
+                cell.setupCell(imageName: nil, name: element.name!, value: String(element.value.value!))
             }
             return cell
         }

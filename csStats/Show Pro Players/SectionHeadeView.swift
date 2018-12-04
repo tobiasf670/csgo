@@ -24,7 +24,7 @@ class SectionHeadeView: UICollectionReusableView {
 
             let options = ImageLoadingOptions( transition: .fadeIn(duration: 0.33),
                                                failureImage: UIImage(named: "unknow"))
-
+            
             Nuke.loadImage(with: imageURL, options: options, into: self.logoImageView)
 
         }

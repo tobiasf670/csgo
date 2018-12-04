@@ -15,7 +15,7 @@ class SteamAPI {
     
     static let shared = SteamAPI()
     
-    public func getStats() -> Observable<[SteamModel]> {
+    public func getStats() -> Observable<[StastModel]> {
         return Observable.create { observer -> Disposable in
             
              Alamofire.request("https://api.steampowered.com/ISteamUserStats/GetUserStatsForGame/v0002/?appid=730&key=12A1D1DE83F9932934EDD6DF2BA00463&steamid=76561197998840550")
@@ -25,7 +25,7 @@ class SteamAPI {
                     case .success:
                         
                        let json = JSON(response.data!)
-                       let array = SteamModel.parse(json: json)
+                       let array = StastModel.parse(json: json)
                         
                         //parse and return object 
                         observer.onNext(array)
@@ -46,7 +46,7 @@ class SteamAPI {
     public func getMatchs() -> Observable<[MatchModel]> {
         return Observable.create { observer -> Disposable in
             
-            Alamofire.request("http://localhost:3000/results")
+            Alamofire.request("https://secret-inlet-64466.herokuapp.com/results")
                 .validate()
                 .responseJSON { response in
                     switch response.result {
@@ -77,7 +77,7 @@ class SteamAPI {
     public func getProPlayers(withTeamID: String) -> Observable<TeamModel> {
         return Observable.create { observer -> Disposable in
         
-            Alamofire.request("http://localhost:3000/team/\(withTeamID)")
+            Alamofire.request("https://secret-inlet-64466.herokuapp.com/team/\(withTeamID)")
                 .validate()
                 .responseJSON { response in
                     switch response.result {
@@ -101,42 +101,4 @@ class SteamAPI {
         }
     }
     
-    
-    
-    
-    
-    
-//
-//    func getFriends() -> Observable<[Friend]> {
-//        return Observable.create { observer -> Disposable in
-//            Alamofire.request("http://friendservice.herokuapp.com/listFriends")
-//                .validate()
-//                .responseJSON { response in
-//                    switch response.result {
-//                    case .success:
-//                        guard let data = response.data else {
-//                            // if no error provided by alamofire return .notFound error instead.
-//                            // .notFound should never happen here?
-//                            observer.onError(response.error ?? GetFriendsFailureReason.notFound)
-//                            return
-//                        }
-//                        do {
-//                            let friends = try JSONDecoder().decode([Friend].self, from: data)
-//                            observer.onNext(friends)
-//                        } catch {
-//                            observer.onError(error)
-//                        }
-//                    case .failure(let error):
-//                        if let statusCode = response.response?.statusCode,
-//                            let reason = GetFriendsFailureReason(rawValue: statusCode)
-//                        {
-//                            observer.onError(reason)
-//                        }
-//                        observer.onError(error)
-//                    }
-//            }
-//
-//            return Disposables.create()
-//        }
-//    }
 }

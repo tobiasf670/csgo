@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTap(_ sender: Any) {
-        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "menuViewController") as? ViewController  {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "menuViewController") as? MenuViewController  {
             if let navigator = self.navigationController {
                 navigator.pushViewController(viewController, animated: true)
             }

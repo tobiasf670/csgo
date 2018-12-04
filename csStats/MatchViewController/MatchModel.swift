@@ -5,20 +5,22 @@
 //  Created by Tobias Frantsen on 27/11/2018.
 //  Copyright © 2018 Tobias Frantsen. All rights reserved.
 //
+import RealmSwift
 import SwiftyJSON
 import UIKit
 
 
-class MatchModel {
-    var time: String?
-    var teamOneImage: String?
-    var teamOneName: String?
-    var teamTwoImage: String?
-    var teamTwoName: String?
-    var BO: String?
+class MatchModel: Object {
+    @objc dynamic var matchId = NSUUID().uuidString
+    @objc dynamic var time: String?
+    @objc dynamic var teamOneImage: String?
+    @objc dynamic var teamOneName: String?
+    @objc dynamic var teamTwoImage: String?
+    @objc dynamic var teamTwoName: String?
+    @objc dynamic  var BO: String?
     
-    init(time: String?, teamOneImage: String?, teamOneName: String?, teamTwoImage: String?, teamTwoName: String?, BO: String?  ) {
-       
+   convenience init(time: String?, teamOneImage: String?, teamOneName: String?, teamTwoImage: String?, teamTwoName: String?, BO: String?  ) {
+        self.init()
         self.time = time
         self.teamOneImage = teamOneImage
         self.teamOneName = teamOneName
@@ -28,6 +30,9 @@ class MatchModel {
         
     }
     
+    override class func primaryKey() -> String? {
+        return "matchId"
+    }
     class func parse(json: JSON) -> [MatchModel] {
        var matchArray : [MatchModel] = [MatchModel]()
         for games in json {

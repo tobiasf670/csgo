@@ -5,17 +5,20 @@
 //  Created by Tobias Frantsen on 03/12/2018.
 //  Copyright © 2018 Tobias Frantsen. All rights reserved.
 //
-
+import RealmSwift
 import SwiftyJSON
 import UIKit
 
 
-class TeamModel {
-    var name: String?
-    var logo: String?
-    var players: [ProPlayerModel]
+class TeamModel: Object {
+    @objc dynamic var teamId = NSUUID().uuidString
+    @objc dynamic var name: String?
+    @objc dynamic var logo: String?
+//     var players: [ProPlayerModel] = []
+    var players = List<ProPlayerModel>()
     
-    init(name: String?, logo: String?, players: [ProPlayerModel] ) {
+   convenience init(name: String?, logo: String?, players: List<ProPlayerModel> ) {
+        self.init()
         self.name = name
         self.logo = logo
         self.players = players
@@ -23,8 +26,13 @@ class TeamModel {
    
     }
     
+    override class func primaryKey() -> String? {
+        return "teamId"
+    }
+    
     class func parse(json: JSON) -> TeamModel  {
-        var playerArray : [ProPlayerModel] = [ProPlayerModel]()
+//        var playerArray : [ProPlayerModel] = [ProPlayerModel]()
+        let playerArray = List<ProPlayerModel>()
         
         let name = json["name"].stringValue
         let logo = json["logo"].stringValue

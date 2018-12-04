@@ -11,6 +11,6 @@ target 'csStats' do
     pod 'RxCocoa',    '~> 4.0'
     pod 'Charts'
     pod 'SwiftyJSON', '~> 4.0'
-    pod 'SimpleCheckbox'
     pod 'Nuke'
+    pod 'RealmSwift'
 end
